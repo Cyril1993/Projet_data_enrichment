@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 # load of data.gouv data into dataframe
-data_geo = pd.read_csv("Ressources/StockEtablissementActif_utf8_geo.csv", low_memory=False)
+data_geo = pd.read_csv("StockEtablissementActif_utf8_geo.csv", low_memory=False)
 
 # selecting columns of interest and transfor
 x = data_geo[["siret","latitude","longitude","codePostalEtablissement","numeroVoieEtablissement","typeVoieEtablissement",
@@ -12,7 +12,7 @@ x.rename(columns={'siret': 'Numéro SIRET'}, inplace=True)
 x['latitude']=x['latitude'].round(4)
 x['longitude']=x['longitude'].round(4)
 
-data_client = pd.read_excel("Ressource/Données réponses fournisseurs.xlsx")
+data_client = pd.read_excel("Données réponses fournisseurs.xlsx")
 y = data_client[["Numéro SIRET","Nom du site ou de l’agence (nom d’usage)","Adresse (du site)","Code postal (du site)",
                  "Ville (du site)",'Etat/Département','Coordonnées GPS : latitude','Coordonnées GPS : longitude']]
 
