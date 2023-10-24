@@ -35,6 +35,6 @@ test['CodePostalEgaux']= test['Code postal (du site)']==test['codePostalEtabliss
 
 print(test.head(20))
 
-chemin_du_fichier_excel = 'Resultats/test.xlsx'
+chemin_du_fichier_excel = 'test.xlsx'
 
 test.to_excel(chemin_du_fichier_excel, index=False)
